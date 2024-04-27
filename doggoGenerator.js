@@ -6,7 +6,7 @@ async function getPic() {
   const promise = await fetch(DOG_URL);
   console.log(promise);
   const processedResponse = await promise.json();
-  if (processedResponse.url.endsWith('.mp4')) {
+  if (processedResponse.url.endsWith('.mp4') || processedResponse.url.endsWith('.webm')){
     getPic();
     return;
   }
